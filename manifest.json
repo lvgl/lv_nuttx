@@ -1,0 +1,21 @@
+{
+    "name": "NuttX Simulator",
+    "maintainer": "NuttX",
+    "hostOperatingsystem": [
+        "Linux"
+    ],
+    "environment": [
+        "make",
+        "X11",
+        "Linux"
+    ],
+    "description": "NuttX Simulator description",
+    "shortDescription": "NuttX Simulator short description",
+    "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
+    "logo": "file:///home/liam/lvgl-project-creator/meta/images/nuttx/logo.png",
+    "branches": [
+        "release/v9.1"
+    ],
+    "getStartedInstructions": "Install the NuttX prerequisites and KConfig frontend https://nuttx.apache.org/docs/latest/quickstart/install.html.\nAditionally, install `unzip`.\nRun `./setup.sh`\nRun `cd nuttx/`\nRun `make nuttx`\nRun `./nuttx`",
+    "settings": []
+}

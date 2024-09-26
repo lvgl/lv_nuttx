@@ -1,0 +1,1 @@
+include $(wildcard $(APPDIR)/my_lvgl_apps/*/Make.defs)

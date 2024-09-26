@@ -1,0 +1,14 @@
+include $(APPDIR)/Make.defs
+
+# My LVGL app built-in application info
+
+PROGNAME = $(CONFIG_MY_LVGL_APPS_MY_LVGL_APP_PROGNAME)
+PRIORITY = $(CONFIG_MY_LVGL_APPS_MY_LVGL_APP_PRIORITY)
+STACKSIZE = $(CONFIG_MY_LVGL_APPS_MY_LVGL_APP_STACKSIZE)
+MODULE = $(CONFIG_MY_LVGL_APPS_MY_LVGL_APP)
+
+# My LVGL App
+
+MAINSRC = my_lvgl_app.c
+
+include $(APPDIR)/Application.mk
