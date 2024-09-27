@@ -1,0 +1,77 @@
+{
+    "name": "NuttX esp32s3-lcd-ev",
+    "maintainer": "NuttX",
+    "hostOperatingsystem": [
+        "Linux"
+    ],
+    "environment": [
+        "make",
+        "Linux"
+    ],
+    "hardware": {
+        "chipVendor": "Espressif",
+        "manufacturer": "Espressif",
+        "specs": {
+            "MCU": "ESP32-S3",
+            "RAM": "512 KB internal SRAM, 8/16 MB external PSRAM",
+            "Flash": "2/4/8/16 MB",
+            "GPU": "None",
+            "Resolution": "800x480 / 480x480",
+            "Display Size": "4.3\u201d / 3.95\u201d",
+            "Interface": "RGB LCD",
+            "Color Depth": "24-bit",
+            "Technology": "IPS",
+            "DPI": "216 px/inch / 171 px/inch",
+            "Touch Pad": "Capacitive (GT1151/FT5x06)"
+        }
+    },
+    "description": "NuttX esp32s3-lcd-ev description",
+    "shortDescription": "NuttX esp32s3-lcd-ev short description",
+    "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
+    "logo": "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.png",
+    "branches": [
+        "release/v9.1"
+    ],
+    "getStartedInstructions": "Install the NuttX prerequisites and KConfig frontend https://nuttx.apache.org/docs/latest/quickstart/install.html \nAditionally, install `unzip`\nRun `./setup.sh`\nRun `cd nuttx/`\nRun `make nuttx`\nRun `make flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BINDIR=./`",
+    "settings": [
+        {
+            "type": "always",
+            "actions": [
+                {
+                    "toReplace": "./tools/configure.sh -l sim:lvgl_fb",
+                    "newContent": "./tools/configure.sh -l esp32s3-lcd-ev:lvgl",
+                    "filePath": "setup.sh"
+                }
+            ]
+        },
+        {
+            "type": "dropdown",
+            "label": "Model",
+            "options": [
+                {
+                    "name": "480x480, v1.5",
+                    "value": "0",
+                    "default": "true"
+                },
+                {
+                    "name": "800x480",
+                    "value": "1"
+                }
+            ],
+            "actions": [
+                {
+                    "ifValue": "0",
+                    "toReplace": "yes '' | make oldconfig",
+                    "newContent": "kconfig-tweak --set-val CONFIG_ESP32S3_I2C0_SCLPIN 48\nkconfig-tweak --set-val CONFIG_ESP32S3_I2C0_SDAPIN 47\nkconfig-tweak --set-val CONFIG_ESP32S3_LCD_DATA6_PIN 8\nkconfig-tweak --set-val CONFIG_ESP32S3_LCD_DATA7_PIN 18\nyes '' | make oldconfig",
+                    "filePath": "setup.sh"
+                },
+                {
+                    "ifValue": "1",
+                    "toReplace": "yes '' | make oldconfig",
+                    "newContent": "CONFIG_ESP32S3_LCD_HRES=800\nyes '' | make oldconfig",
+                    "filePath": "setup.sh"
+                }
+            ]
+        }
+    ]
+}

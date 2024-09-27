@@ -1,8 +1,8 @@
 1. Launch the Project Creator
 2. Create a NuttX Simulator project
 3. Follow the remaining steps given by the Project Creator
-    1. Install the NuttX prerequisites and KConfig frontend in https://nuttx.apache.org/docs/latest/quickstart/install.html.\nAditionally
-    2. Install `unzip`
+    1. Install the NuttX prerequisites and KConfig frontend in https://nuttx.apache.org/docs/latest/quickstart/install.html
+    2. Additionally, install `unzip`
     3. Run `./setup.sh` or run the following commands
         ```sh
         git submodule update --init
