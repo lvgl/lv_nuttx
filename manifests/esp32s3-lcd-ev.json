@@ -49,13 +49,9 @@
             "label": "Model",
             "options": [
                 {
-                    "name": "480x480, v1.5",
+                    "name": "v1.5, 480x480",
                     "value": "0",
                     "default": "true"
-                },
-                {
-                    "name": "800x480",
-                    "value": "1"
                 }
             ],
             "actions": [
@@ -63,12 +59,6 @@
                     "ifValue": "0",
                     "toReplace": "yes '' \\| make oldconfig",
                     "newContent": "kconfig-tweak --set-val CONFIG_ESP32S3_I2C0_SCLPIN 48\nkconfig-tweak --set-val CONFIG_ESP32S3_I2C0_SDAPIN 47\nkconfig-tweak --set-val CONFIG_ESP32S3_LCD_DATA6_PIN 8\nkconfig-tweak --set-val CONFIG_ESP32S3_LCD_DATA7_PIN 18\nyes '' | make oldconfig",
-                    "filePath": "setup.sh"
-                },
-                {
-                    "ifValue": "1",
-                    "toReplace": "yes '' \\| make oldconfig",
-                    "newContent": "CONFIG_ESP32S3_LCD_HRES=800\nyes '' | make oldconfig",
                     "filePath": "setup.sh"
                 }
             ]

@@ -17,5 +17,16 @@
         "release/v9.1"
     ],
     "getStartedInstructions": "Install the NuttX prerequisites and KConfig frontend https://nuttx.apache.org/docs/latest/quickstart/install.html \nAditionally, install `unzip`\nRun `./setup.sh`\nRun `cd nuttx/`\nRun `make nuttx`\nRun `./nuttx`",
-    "settings": []
+    "settings": [
+        {
+            "type": "always",
+            "actions": [
+                {
+                    "toReplace": "yes '' \\| make oldconfig",
+                    "newContent": "kconfig-tweak --set-str CONFIG_INIT_ENTRYPOINT my_lvgl_app_main\nyes '' | make oldconfig",
+                    "filePath": "setup.sh"
+                }
+            ]
+        }
+    ]
 }

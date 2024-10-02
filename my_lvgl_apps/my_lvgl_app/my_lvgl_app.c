@@ -1,69 +1,19 @@
-/****************************************************************************
- * apps/examples/lvgldemo/lvgldemo.c
- *
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.  The
- * ASF licenses this file to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance with the
- * License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
- * License for the specific language governing permissions and limitations
- * under the License.
- *
- ****************************************************************************/
-
-/****************************************************************************
- * Included Files
- ****************************************************************************/
-
 #include <nuttx/config.h>
 #include <unistd.h>
 #include <sys/boardctl.h>
 
-#include <lvgl/lvgl.h>
-#include <lvgl/demos/lv_demos.h>
+#include "lvgl/lvgl.h"
+#include "lvgl/demos/lv_demos.h"
+#include "lvgl/examples/lv_examples.h"
 #ifdef CONFIG_LV_USE_NUTTX_LIBUV
 #include <uv.h>
 #endif
-
-/****************************************************************************
- * Pre-processor Definitions
- ****************************************************************************/
-
-/* Should we perform board-specific driver initialization? There are two
- * ways that board initialization can occur:  1) automatically via
- * board_late_initialize() during bootupif CONFIG_BOARD_LATE_INITIALIZE
- * or 2).
- * via a call to boardctl() if the interface is enabled
- * (CONFIG_BOARDCTL=y).
- * If this task is running as an NSH built-in application, then that
- * initialization has probably already been performed otherwise we do it
- * here.
- */
 
 #undef NEED_BOARDINIT
 
 #if defined(CONFIG_BOARDCTL) && !defined(CONFIG_NSH_ARCHINIT)
 #  define NEED_BOARDINIT 1
 #endif
-
-/****************************************************************************
- * Private Type Declarations
- ****************************************************************************/
-
-/****************************************************************************
- * Private Data
- ****************************************************************************/
-
-/****************************************************************************
- * Private Functions
- ****************************************************************************/
 
 #ifdef CONFIG_LV_USE_NUTTX_LIBUV
 static void lv_nuttx_uv_loop(uv_loop_t *loop, lv_nuttx_result_t *result)
@@ -86,23 +36,6 @@ static void lv_nuttx_uv_loop(uv_loop_t *loop, lv_nuttx_result_t *result)
   lv_nuttx_uv_deinit(&data);
 }
 #endif
-
-/****************************************************************************
- * Public Functions
- ****************************************************************************/
-
-/****************************************************************************
- * Name: main or lv_demos_main
- *
- * Description:
- *
- * Input Parameters:
- *   Standard argc and argv
- *
- * Returned Value:
- *   Zero on success; a positive, non-zero value on failure.
- *
- ****************************************************************************/
 
 int my_lvgl_app_main(int argc, FAR char *argv[])
 {
@@ -137,14 +70,11 @@ int my_lvgl_app_main(int argc, FAR char *argv[])
       return 1;
     }
 
-  if (!lv_demos_create(&argv[1], argc - 1))
-    {
-      lv_demos_show_help();
 
-      /* we can add custom demos here */
+  /* you can begin your UI code here or try other demos/examples */
 
-      goto demo_end;
-    }
+  lv_demo_widgets();
+
 
 #ifdef CONFIG_LV_USE_NUTTX_LIBUV
   lv_nuttx_uv_loop(&ui_loop, &result);
@@ -161,7 +91,6 @@ int my_lvgl_app_main(int argc, FAR char *argv[])
     }
 #endif
 
-demo_end:
   lv_disp_remove(result.disp);
   lv_deinit();
 
