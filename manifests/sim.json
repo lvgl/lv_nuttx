@@ -12,7 +12,7 @@
     "description": "NuttX Simulator description",
     "shortDescription": "NuttX Simulator short description",
     "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
-    "logo": [
+    "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.png"
     ],
     "branches": [
