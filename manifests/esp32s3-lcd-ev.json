@@ -28,7 +28,7 @@
     "description": "NuttX esp32s3-lcd-ev description",
     "shortDescription": "NuttX esp32s3-lcd-ev short description",
     "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
-    "logo": [
+    "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.png"
     ],
     "branches": [
