@@ -22,6 +22,7 @@
     "settings": [
         {
             "type": "always",
+            "label": "set the entrypoint app",
             "actions": [
                 {
                     "toReplace": "yes '' \\| make oldconfig",
