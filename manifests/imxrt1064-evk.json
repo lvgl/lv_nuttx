@@ -1,0 +1,51 @@
+{
+    "name": "NuttX MIMXRT1064-EVK",
+    "maintainer": "NuttX",
+    "hostOperatingsystem": [
+        "Linux"
+    ],
+    "environment": [
+        "make",
+        "Linux"
+    ],
+    "hardware": {
+        "chipVendor": "NXP",
+        "manufacturer": "NXP",
+        "specs": {
+            "MCU": "i.MX RT1064",
+            "RAM": "256 MB SRAM",
+            "Flash": "512+64 MB",
+            "GPU": "None",
+            "Resolution": "480x272",
+            "Display Size": "4.3\u201d",
+            "Interface": "RGB parallel",
+            "Color Depth": "24-bit",
+            "Technology": "LCD",
+            "DPI": "128 px/inch",
+            "Touch Pad": "Capacitive"
+        }
+    },
+    "description": "NuttX is a highly configurable RTOS that implements many POSIX standard interfaces for a familliar development experience and well defined boundaries between components. The NXP MIMXRT1064-EVK is a devboard with an optional touchscreen. This option creates a NuttX project for the MIMXRT1064-EVK based on the NuttX LVGL defconfig for mimxrt1064-evk and a basic directory structure for your custom LVGL app.",
+    "shortDescription": "NuttX RTOS project for MIMXRT1064-EVK with LVGL",
+    "urlToClone": "https://github.com/lvgl/lv_nuttx.git",
+    "logos": [
+        "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
+    ],
+    "branches": [
+        "release/v9.2"
+    ],
+    "getStartedInstructions": "1. Install the NuttX prerequisites and KConfig frontend: `https://nuttx.apache.org/docs/latest/quickstart/install.html`.\n2. Aditionally, install `unzip`.\n3. Run `./setup.sh`.\n4. Run `cd nuttx/`.\n5. Run `make -j$(nproc)`.\n6. Refer to the docs for flashing and debugging info: `https://nuttx.apache.org/docs/latest/platforms/arm/imxrt/boards/imxrt1064-evk/index.html`.",
+    "settings": [
+        {
+            "type": "always",
+            "label": "set the defconfig",
+            "actions": [
+                {
+                    "toReplace": "\\./tools/configure\\.sh -l sim:lvgl_fb",
+                    "newContent": "./tools/configure.sh -l mimxrt1064-evk:lvgl",
+                    "filePath": "setup.sh"
+                }
+            ]
+        }
+    ]
+}

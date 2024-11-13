@@ -18,6 +18,6 @@
     4. Run the following commands
         ```sh
         cd nuttx
-        make -j$(nproc) nuttx
+        make -j$(nproc)
         ./nuttx
         ```
