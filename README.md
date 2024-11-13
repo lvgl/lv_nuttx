@@ -12,13 +12,12 @@
         cd nuttx
         ./tools/configure.sh -l sim:lvgl_fb
         kconfig-tweak --enable CONFIG_MY_LVGL_APPS_MY_LVGL_APP
-        kconfig-tweak --set-str CONFIG_INIT_ENTRYPOINT my_lvgl_app_main
         yes '' | make oldconfig
         cd ..
         ```
     4. Run the following commands
         ```sh
         cd nuttx
-        make nuttx
+        make -j$(nproc) nuttx
         ./nuttx
         ```

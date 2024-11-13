@@ -21,4 +21,4 @@ yes '' | make oldconfig
 cd ..
 
 echo
-echo "Ready. Run 'cd nuttx/', 'make nuttx', and './nuttx'"
+echo "Ready. Run 'cd nuttx/' and 'make -j$(nproc) nuttx'"
