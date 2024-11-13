@@ -1,0 +1,51 @@
+{
+    "name": "NuttX esp32s3-box-3",
+    "maintainer": "NuttX",
+    "hostOperatingsystem": [
+        "Linux"
+    ],
+    "environment": [
+        "make",
+        "Linux"
+    ],
+    "hardware": {
+        "chipVendor": "Espressif",
+        "manufacturer": "Espressif",
+        "specs": {
+            "MCU": "ESP32-S3",
+            "RAM": "512 KB internal SRAM, 16 MB external PSRAM",
+            "Flash": "16 MB",
+            "GPU": "None",
+            "Resolution": "320x240",
+            "Display Size": "2.4\u201d",
+            "Interface": "SPI 40 MHz",
+            "Color Depth": "16-bit",
+            "Technology": "LCD (ILI9341)",
+            "DPI": "167 px/inch",
+            "Touch Pad": "Capacitive (GT911)"
+        }
+    },
+    "description": "NuttX is a highly configurable RTOS that implements many POSIX standard interfaces for a familliar development experience and well defined boundaries between components. Espressif esp32s3-box-3 is an AIoT kit based on the esp32s3. This option creates a NuttX project for the Espressif esp32s3-box-3 based on the NuttX LVGL defconfig for esp32se-box-3 and a basic directory structure for your custom LVGL app.",
+    "shortDescription": "NuttX RTOS project for esp32s3-lcd-ev board with LVGL",
+    "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
+    "logos": [
+        "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
+    ],
+    "branches": [
+        "release/v9.2"
+    ],
+    "getStartedInstructions": "1. Install the NuttX prerequisites and KConfig frontend: `https://nuttx.apache.org/docs/latest/quickstart/install.html`.\n2. Aditionally, install `unzip`.\n3. Run `./setup.sh`.\n4. Run `cd nuttx/`.\n5. Run `make -j$(nproc) nuttx`.\n6. Run `make -j$(nproc) flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BINDIR=./`\n",
+    "settings": [
+        {
+            "type": "always",
+            "label": "set the defconfig, patch files, and set additional configurations",
+            "actions": [
+                {
+                    "toReplace": "\\./tools/configure\\.sh -l sim:lvgl_fb",
+                    "newContent": "echo -e '\\nCFLAGS += -DLV_COLOR_16_SWAP' >> ../apps/graphics/lvgl/Makefile\nmkdir -p boards/xtensa/esp32s3/esp32s3-box/src/etc/init.d/\ntouch boards/xtensa/esp32s3/esp32s3-box/src/etc/init.d/rcS\necho -e '\\nmy_lvgl_app &' >> boards/xtensa/esp32s3/esp32s3-box/src/etc/init.d/rc.sysinit\necho -e '\\nRCSRCS = etc/init.d/rc.sysinit etc/init.d/rcS' >> boards/xtensa/esp32s3/esp32s3-box/src/Make.defs\n./tools/configure.sh -l esp32s3-box:lvgl-3\nkconfig-tweak --enable CONFIG_FS_ROMFS\nkconfig-tweak --enable CONFIG_ETC_ROMFS",
+                    "filePath": "setup.sh"
+                }
+            ]
+        }
+    ]
+}
