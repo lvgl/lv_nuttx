@@ -1,5 +1,5 @@
 {
-    "name": "NuttX esp32s3-lcd-ev",
+    "name": "NuttX ESP32-S3-LCD-EV-Board",
     "maintainer": "NuttX",
     "hostOperatingsystem": [
         "Linux"
@@ -25,16 +25,16 @@
             "Touch Pad": "Capacitive (GT1151/FT5x06)"
         }
     },
-    "description": "NuttX is a highly configurable RTOS that implements many POSIX standard interfaces for a familliar development experience and well defined boundaries between components. Espressif esp32s3-lcd-ev is a devboard with a touchscreen based on the esp32s3. This option creates a NuttX project for the Espressif esp32s3-lcd-ev based on the NuttX LVGL defconfig for esp32se-lcd-ev and a basic directory structure for your custom LVGL app.",
-    "shortDescription": "NuttX RTOS project for esp32s3-lcd-ev board with LVGL",
-    "urlToClone": "https://github.com/liamHowatt/lv_nuttx.git",
+    "description": "NuttX is a highly configurable RTOS that implements many POSIX standard interfaces for a familliar development experience and well defined boundaries between components. The Espressif ESP32-S3-LCD-EV-Board is a devboard with a touchscreen based on the ESP32-S3. This option creates a NuttX project for the Espressif ESP32-S3-LCD-EV-Board based on the NuttX LVGL defconfig for esp32s3-lcd-ev and a basic directory structure for your custom LVGL app.",
+    "shortDescription": "NuttX RTOS project for ESP32-S3-LCD-EV-Board with LVGL",
+    "urlToClone": "https://github.com/lvgl/lv_nuttx.git",
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
     "branches": [
         "release/v9.2"
     ],
-    "getStartedInstructions": "1. Install the NuttX prerequisites and KConfig frontend: `https://nuttx.apache.org/docs/latest/quickstart/install.html`.\n2. Aditionally, install `unzip`.\n3. Run `./setup.sh`.\n4. Run `cd nuttx/`.\n5. Run `make -j$(nproc) nuttx`.\n6. Run `make -j$(nproc) flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BINDIR=./`\n",
+    "getStartedInstructions": "1. Install the NuttX prerequisites and KConfig frontend: `https://nuttx.apache.org/docs/latest/quickstart/install.html`.\n2. Aditionally, install `unzip`.\n3. Install the ESP32-S3 Toolchain: `https://nuttx.apache.org/docs/latest/platforms/xtensa/esp32s3/index.html#esp32-s3-toolchain`.\n4. Run `./setup.sh`.\n5. Run `cd nuttx/`.\n6. Run `make -j$(nproc)`.\n7. Run `make -j$(nproc) flash ESPTOOL_PORT=<port> ESPTOOL_BINDIR=./`",
     "settings": [
         {
             "type": "always",

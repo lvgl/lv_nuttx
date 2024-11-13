@@ -1,0 +1,52 @@
+{
+    "name": "NuttX Waveshare RP2040-LCD-1.28",
+    "maintainer": "NuttX",
+    "hostOperatingsystem": [
+        "Linux"
+    ],
+    "environment": [
+        "make",
+        "CMake",
+        "Linux"
+    ],
+    "hardware": {
+        "chipVendor": "Raspberry Pi",
+        "manufacturer": "Waveshare",
+        "specs": {
+            "MCU": "RP2040",
+            "RAM": "264 KB internal SRAM",
+            "Flash": "2 MB",
+            "GPU": "None",
+            "Resolution": "240x240",
+            "Display Size": "1.28\u201d diameter",
+            "Interface": "SPI",
+            "Color Depth": "16-bit",
+            "Technology": "IPS (GC9A01A)",
+            "DPI": "188 px/inch",
+            "Touch Pad": "Capacitive (CST816T)"
+        }
+    },
+    "description": "NuttX is a highly configurable RTOS that implements many POSIX standard interfaces for a familliar development experience and well defined boundaries between components. The Waveshare RP2040-LCD-1.28 is a round touch display module powered by a Raspberry Pi RP2040 MCU. This option creates a NuttX project for the Waveshare RP2040-LCD-1.28 based on the NuttX LVGL defconfig for waveshare-rp2040-lcd-1.28 and a basic directory structure for your custom LVGL app.",
+    "shortDescription": "NuttX RTOS project for Waveshare RP2040-LCD-1.28 with LVGL",
+    "urlToClone": "https://github.com/lvgl/lv_nuttx.git",
+    "logos": [
+        "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
+    ],
+    "branches": [
+        "release/v9.2"
+    ],
+    "getStartedInstructions": "1. Install the NuttX prerequisites and KConfig frontend: `https://nuttx.apache.org/docs/latest/quickstart/install.html`.\n2. Aditionally, install `unzip`.\n3. Install the Raspberry Pi Pico SDK: `https://nuttx.apache.org/docs/latest/platforms/arm/rp2040/index.html#installation`.\n4. Run `./setup.sh`.\n5. Run `cd nuttx/`.\n6. Run `make -j$(nproc)`.\n7. Copy the UF2 file to the device: `https://nuttx.apache.org/docs/latest/platforms/arm/rp2040/index.html#programming`.",
+    "settings": [
+        {
+            "type": "always",
+            "label": "set the defconfig",
+            "actions": [
+                {
+                    "toReplace": "\\./tools/configure\\.sh -l sim:lvgl_fb",
+                    "newContent": "./tools/configure.sh -l waveshare-rp2040-lcd-1.28:lvgl",
+                    "filePath": "setup.sh"
+                }
+            ]
+        }
+    ]
+}
