@@ -17,7 +17,7 @@
             "Flash": "2/4/8/16 MB",
             "GPU": "None",
             "Resolution": "800x480 / 480x480",
-            "Display Size": "4.3\u201d / 3.95\u201d",
+            "Display Size": "4.3” / 3.95”",
             "Interface": "RGB LCD",
             "Color Depth": "24-bit",
             "Technology": "IPS",
@@ -31,6 +31,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_nuttx/master/board_images/espressif-ESP32-S3-LCD-EV-Board.webp",
     "branches": [
         "release/v9.2"
     ],

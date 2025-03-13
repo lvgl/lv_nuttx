@@ -17,7 +17,7 @@
             "Flash": "1 MB",
             "GPU": "Chrom-ART / DMA2D",
             "Resolution": "480x272",
-            "Display Size": "4.3\u201d",
+            "Display Size": "4.3”",
             "Interface": "RGB parallel",
             "Color Depth": "16-bit",
             "Technology": "TFT LCD",
@@ -31,6 +31,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_nuttx/master/board_images/STM32-F746G-DISCO.webp",
     "branches": [
         "release/v9.2"
     ],
