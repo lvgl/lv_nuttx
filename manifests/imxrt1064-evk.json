@@ -17,7 +17,7 @@
             "Flash": "512+64 MB",
             "GPU": "None",
             "Resolution": "480x272",
-            "Display Size": "4.3\u201d",
+            "Display Size": "4.3”",
             "Interface": "RGB parallel",
             "Color Depth": "24-bit",
             "Technology": "LCD",
@@ -31,6 +31,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_nuttx/master/board_images/NXP-MIMXRT1064-EVK.webp",
     "branches": [
         "release/v9.2"
     ],

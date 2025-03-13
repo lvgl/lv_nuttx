@@ -18,7 +18,7 @@
             "Flash": "2 MB",
             "GPU": "None",
             "Resolution": "240x240",
-            "Display Size": "1.28\u201d diameter",
+            "Display Size": "1.28” diameter",
             "Interface": "SPI",
             "Color Depth": "16-bit",
             "Technology": "IPS (GC9A01A)",
@@ -32,6 +32,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_nuttx/master/board_images/Raspberry-Pi-RP2040-LCD-1.28.webp",
     "branches": [
         "release/v9.2"
     ],

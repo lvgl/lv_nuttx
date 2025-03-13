@@ -17,7 +17,7 @@
             "Flash": "16 MB",
             "GPU": "None",
             "Resolution": "320x240",
-            "Display Size": "2.4\u201d",
+            "Display Size": "2.4”",
             "Interface": "SPI 40 MHz",
             "Color Depth": "16-bit",
             "Technology": "LCD (ILI9341)",
@@ -31,6 +31,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nuttx/logo.svg"
     ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_nuttx/master/board_images/espressif-ESP32-S3-BOX-3.webp",
     "branches": [
         "release/v9.2"
     ],
