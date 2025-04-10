@@ -9,8 +9,8 @@
         "Linux"
     ],
     "hardware": {
-        "chipVendor": "STMicroelectronics",
-        "manufacturer": "STMicroelectronics",
+        "chipVendor": "ST",
+        "manufacturer": "ST",
         "specs": {
             "MCU": "STM32F429ZI",
             "RAM": "256 KB internal SRAM, 8 MB external SDRAM",
