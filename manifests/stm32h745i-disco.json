@@ -9,8 +9,8 @@
         "Linux"
     ],
     "hardware": {
-        "chipVendor": "STMicroelectronics",
-        "manufacturer": "STMicroelectronics",
+        "chipVendor": "ST",
+        "manufacturer": "ST",
         "specs": {
             "MCU": "STM32H745XI",
             "RAM": "1 MB internal SRAM, 8 MB external SDRAM",
